@@ -1,0 +1,30 @@
+{
+  "name": "node-mange",
+  "version": "1.0.0",
+  "description": "%SystemRoot%\\system32;%SystemRoot%;%SystemRoot%\\System32\\Wbem;%SYSTEMROOT%\\System32\\WindowsPowerShell\\v1.0\\;C:\\Program Files (x86)\\ATI Technologies\\ATI.ACE\\Core-Static;D:\\Git\\cmd;D:\\nodejs\\;D:\\Microsoft VS Code\\bin",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/muzi1102/node-mange.git"
+  },
+  "keywords": [
+    "vue",
+    "admin"
+  ],
+  "author": "beautyLee",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/muzi1102/node-mange/issues"
+  },
+  "homepage": "https://github.com/muzi1102/node-mange#readme",
+  "dependencies": {
+    "vue": "^2.5.17",
+    "vue-router": "^3.0.1"
+  },
+  "devDependencies": {
+    "webpack": "^4.19.0"
+  }
+}
