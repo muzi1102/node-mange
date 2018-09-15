@@ -4,7 +4,9 @@
   "description": "%SystemRoot%\\system32;%SystemRoot%;%SystemRoot%\\System32\\Wbem;%SYSTEMROOT%\\System32\\WindowsPowerShell\\v1.0\\;C:\\Program Files (x86)\\ATI Technologies\\ATI.ACE\\Core-Static;D:\\Git\\cmd;D:\\nodejs\\;D:\\Microsoft VS Code\\bin",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "webpack --config webpack.config.js",
+    "dev": "webpack-dev-server --config webpack.config.js --open"
   },
   "repository": {
     "type": "git",
@@ -20,11 +22,16 @@
     "url": "https://github.com/muzi1102/node-mange/issues"
   },
   "homepage": "https://github.com/muzi1102/node-mange#readme",
-  "dependencies": {
-    "vue": "^2.5.17",
-    "vue-router": "^3.0.1"
-  },
+  "dependencies": {},
   "devDependencies": {
-    "webpack": "^4.19.0"
+    "css-loader": "^1.0.0",
+    "html-webpack-plugin": "^2.30.1",
+    "style-loader": "^0.23.0",
+    "url-loader": "^1.1.1",
+    "vue": "^2.5.17",
+    "vue-loader": "^15.4.2",
+    "vue-template-compiler": "^2.5.17",
+    "webpack": "^3.12.0",
+    "webpack-dev-server": "^2.11.3"
   }
 }
