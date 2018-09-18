@@ -56,6 +56,18 @@ step4:写死的index.html 诸多不方便
     template:'index.html'
 })
 
+step4:怎么写es6的语法
+需要安装什么如何去做？
+搞了半天是自己东西写错地方
+    "babel-core": "^6.26.3",
+    "babel-loader": "^7.1.5",
+    "babel-preset-env": "^1.7.0",
+    "babel-preset-es2015": "^6.24.1",
+    "babel-runtime": "^6.26.0",
+没搞懂每个是干什么的
+不在webpack的配置文件写也是可以的？难道是浏览器支持？
+
+
 3:在component文件夹新建header.vue sidebar.vue
 
 

@@ -1,0 +1,31 @@
+
+{
+    "WoList":{
+      "header": {
+        "version": "1.0",
+        "serviceCode": "13246",
+      },
+      "retCode": "0",
+      "retMessage": "",
+      "totalPages": "10",
+      "pageIndex": "2",
+      "workOrders": [
+        {
+          "agentId": "a123",
+          "domainUserId": "S666666",
+          "domainUserName": "张三"
+        },
+        {
+          "agentId": "a123",
+          "domainUserId": "S666666",
+          "domainUserName": "麻子"
+        },
+        {
+          "agentId": "a123",
+          "domainUserId": "S666666",
+          "domainUserName": "李四"
+        }
+      ]
+    },
+    "createWo":{}
+  }
