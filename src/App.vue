@@ -4,8 +4,7 @@
 </div>
 </template>
 <script>
-    //var Mock = require('mockjs')
-    import Mock from 'mockjs';
+    import axios from 'axios';
     export default {
         data(){
             return {
@@ -17,15 +16,16 @@
         },
         methods:{
             init(){
-                var data =Mock.mock({
-                    name: {
-                        first: '@FIRST',
-                        middle: '@FIRST',
-                        last: '@LAST',
-                        full: '@first @middle @last'
-                    }
+                axios.get('/api/news').then((response)=>{
+                    console.log(response);
+                }).catch((error)=>{
+                    console.log(error);
                 })
-                console.log(data);
+                // axios.get('http://localhost:3003/news').then((response)=>{
+                //     console.log(response);
+                // }).catch((error)=>{
+                //     console.log(error);
+                // })
             }
 
         }

@@ -67,6 +67,16 @@ step4:怎么写es6的语法
 没搞懂每个是干什么的
 不在webpack的配置文件写也是可以的？难道是浏览器支持？
 
+step 5：添加假数据
+json-server 把json数据转成可以请求的api
+express可以做到就是相当启动一个本地服务
+平时我们公司前后端联调用fidder把请求的接口代理到本地，在vue项目中我们需要用的第三方插件把请求代理到本地（http-proxy-middleware）//???这里存在疑问
+npm scrips 同时运行2个命令 用|分开
+请求到 /api/users 现在会被代理到请求 http://localhost:3000/api/users。
+这里搞了半天原来是我自己没看清楚这里的问题
+启动本地服务之后。引用axios , http://localhost:3003/news get请求是可以请求到数据的，但是有个问题？？在接口前面我加入了localhost:3003，真正上线的时候不要处理。
+这个东西我只需要在开发环境使用，故这里需要区分是开发还是生产环境。
+那么问题来了，怎么区分是生产还是开发环境。。
 
 3:在component文件夹新建header.vue sidebar.vue
 

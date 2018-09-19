@@ -1,7 +1,7 @@
 const path = require('path');
 const { VueLoaderPlugin } = require('vue-loader');
 const HtmlWebpackPlugin = require('html-webpack-plugin'); 
-
+const proxy = require('http-proxy-middleware');
 module.exports = {
     entry:'./src/main.js',
     output:{
@@ -25,6 +25,16 @@ module.exports = {
                 }
             }
         ]
+    },
+    devServer:{
+        proxy:{
+            '/api':{
+                target:'http://localhost:3003',
+                pathRewrite: { '^/api':''},
+                changeOrigin: true
+            },
+        },
+        port:9000
     },
     resolve: {
         alias: {

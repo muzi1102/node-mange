@@ -3,7 +3,7 @@
     "WoList":{
       "header": {
         "version": "1.0",
-        "serviceCode": "13246",
+        "serviceCode": "13246"
       },
       "retCode": "0",
       "retMessage": "",
