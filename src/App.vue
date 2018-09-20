@@ -1,31 +1,25 @@
 <template>
 <div>
-    <p>测试我是否有没有数据1111</p>
+    <Header></Header>
 </div>
 </template>
 <script>
     import axios from 'axios';
+    import Header from './layout/header'
     export default {
         data(){
             return {
 
             }
         },
+        components:{
+            Header
+        },
         mounted(){
             this.init();
         },
         methods:{
             init(){
-                axios.get('/api/news').then((response)=>{
-                    console.log(response);
-                }).catch((error)=>{
-                    console.log(error);
-                })
-                // axios.get('http://localhost:3003/news').then((response)=>{
-                //     console.log(response);
-                // }).catch((error)=>{
-                //     console.log(error);
-                // })
             }
 
         }

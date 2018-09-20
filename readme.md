@@ -78,6 +78,13 @@ npm scrips 同时运行2个命令 用|分开
 这个东西我只需要在开发环境使用，故这里需要区分是开发还是生产环境。
 那么问题来了，怎么区分是生产还是开发环境。。
 
+step6:resolve模板怎么解析
+引入文件的时候我不想写某些文件的后缀名alias
+那么关于路径的缩写extensions
+
+step7:解析css的文件
+我直接在vue文件中写css是无法解析的成功的
+
 3:在component文件夹新建header.vue sidebar.vue
 
 

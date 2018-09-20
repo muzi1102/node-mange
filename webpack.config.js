@@ -23,6 +23,10 @@ module.exports = {
                         "presets": ['es2015']
                     }
                 }
+            },
+            {
+                test:/\.css$/,
+                use:['style-loader','css-loader']
             }
         ]
     },
@@ -38,8 +42,10 @@ module.exports = {
     },
     resolve: {
         alias: {
-            vue: 'vue/dist/vue.js'
-        }
+            vue: 'vue/dist/vue.js',
+            '@':path.resolve(__dirname,'src')
+        },
+        extensions:['.js','.json','.css','.vue']
     },
     plugins:[
         new VueLoaderPlugin(),
