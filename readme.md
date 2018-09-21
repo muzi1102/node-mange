@@ -82,6 +82,15 @@ step6:resolve模板怎么解析
 引入文件的时候我不想写某些文件的后缀名alias
 那么关于路径的缩写extensions
 
+step7:引入file-loader,url-loader 对这个loader的具体配置是不了解的。。
+关于引入element-ui 的css报错的原因去掉css配置的exclude 就可以了这是为什呢？？？
+引入重置浏览器默认样式的reset.css
+
+step8：添加路由的信息。总的我们可以把整个页面看成都是路由
+安vue-router 
+增加router/index.js 在里面写入router的信息，在main.js import vue，在vue的实例化的时候加入route的信息
+我发现自己对vue-router完全不了解
+
 step7:解析css的文件
 我直接在vue文件中写css是无法解析的成功的
 
