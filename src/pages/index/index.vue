@@ -49,6 +49,23 @@
                             </ul>
                         </div>
                     </div>
+                    <h5 class="mb15">常见功能</h5>
+                    <div class="widget-box mb40 usefull-links">
+                        <ul>
+                            <li><a href="">微信</a></li>
+                            <li><a href="">微信</a></li>
+                            <li><a href="">微信</a></li>
+                            <li><a href="">微信</a></li>
+                            <li><a href="">微信</a></li>
+                        </ul>
+                        <ul>
+                            <li><a href="">微信</a></li>
+                            <li><a href="">微信</a></li>
+                            <li><a href="">微信</a></li>
+                            <li><a href="">微信</a></li>
+                            <li><a href="">微信</a></li>
+                        </ul>
+                    </div>
                 </div>
                 <div class="dashboard-right">2</div>
             </div>
@@ -120,16 +137,17 @@
 }
 .dashboard-left{
     margin-right: 240px;
-    float: left;
 }
 .dashboard-right{
     background-color: aqua;
     width: 240px;
-    float: right;
+    position: absolute;
+    right:0px;
+    top: 0px;
 }
-.widget-box {
+.widget-box ul{
     display: flex;
-    flex-direction: row 
+    flex-direction: row ;
 }
 .widget-box .widget-box-inner{
     padding: 40px 10px;
@@ -138,5 +156,19 @@
 }
 .widget-box ul li{
     flex: 1
+}
+.flex-container{
+    position: relative;
+}
+.usefull-links ul li{
+    margin-left: 2px;
+    box-sizing: border-box;
+    background: #F8F8F8;
+}
+.usefull-links ul li>a{
+    display: block;
+    font-size: 14px;
+    color: #333333;
+    padding: 20px;
 }
 </style>
