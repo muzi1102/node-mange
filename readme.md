@@ -89,7 +89,7 @@ step7:引入file-loader,url-loader 对这个loader的具体配置是不了解的
 step8：添加路由的信息。总的我们可以把整个页面看成都是路由
 安vue-router 
 增加router/index.js 在里面写入router的信息，在main.js import vue，在vue的实例化的时候加入route的信息
-我发现自己对vue-router完全不了解
+我发现自己对vue-router完全不了解和flex的理解也不够。。
 
 step7:解析css的文件
 我直接在vue文件中写css是无法解析的成功的

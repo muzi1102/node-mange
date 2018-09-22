@@ -1,6 +1,6 @@
 <template>
     <div>
-        <div class="container">
+        <!-- <div class="container">
             <div class="d2">左</div>
             <div class="d3">
                 <div class="inner">
@@ -23,12 +23,34 @@
                     1111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111
                 </div>
             </div>
-        </div>
+        </div> -->
+        <ul>
+            <li v-for="(item,index) in routeArr">
+                {{item.name}}
+                <div v-if="item.sub">我是11</div>
+                <div v-if="item.sub">111dbsdf </div>
+            </li>
+        </ul>
+        
     </div>    
 </template>
 <script>
 export default {
-    
+    data(){
+        return{
+            routeArr:[{
+                name:'11'
+            },{
+                name:'22',
+                sub:{
+                    name:'221'
+                }
+            }],
+            obj:{a:{
+                name:'11'
+            }}
+        }
+    }
 }
 </script>
 <style>

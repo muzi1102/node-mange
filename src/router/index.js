@@ -1,6 +1,7 @@
 import VueRouter from 'vue-router'
 import Layout from '@/layout/layout';
 import dashboard from '@/pages/index/index'
+import shopIndex from '@/pages/shop/index'
 import test from '@/pages/test'
 
 const router = new VueRouter({
@@ -17,6 +18,15 @@ const router = new VueRouter({
                 path:'dashboard',
                 component:dashboard
             }]
+        },
+        {
+            path:'/shop',
+            component:Layout,
+            children:[{
+                name:'shopIndex',
+                path:'index',
+                component:shopIndex
+            }]  
         },
         {
             path:"/test",
