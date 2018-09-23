@@ -1,72 +1,60 @@
 <template>
-    <div>
-        <div class="sidebar">
-            <div class="logo">
-                我其实是logo
-            </div>
-            <ul>
-                <li v-for="(item,index) in routeArr" class="el-icon-menu">
-                    <router-link to="item.path" class="ml5" tag="a">
-                        {{item.name}}
-                    </router-link>
-                    <div class="subroute" v-if="item.sub">
-                        <sub-route :subRoute=item.sub></sub-route>
-                    </div>
-                </li>
-                <!-- <li class="active el-icon-menu" >
-                    <router-link to="/index/dashboard" class="ml5" tag="a">
-                        概况
-                    </router-link>
-                    <div class="subroute">
-                        <sub-route ></sub-route>
-                    </div>
-                </li>                
-                <li>
-                    <router-link to="/shop/index" class="ml5" tag="a">
-                        店铺
-                    </router-link>
-                </li>
-                <li>
-                    <a href="http://">商品</a>    
-                </li>
-                <li>
-                    <a href="http://">订单</a>
-                </li>
-                <li>
-                    <a href="http://">客户</a>
-                </li>
-                <li>
-                    <a href="http://">数据</a>
-                </li>
-                <li>
-                    <a href="http://">资产</a>
-                </li>
-                <li><a href="http://">设置</a>
-                </li> -->
-            </ul>
-        </div>   
-    </div>
+    <div class="sidebar">
+        <div class="logo">
+            我其实是logo
+        </div>
+        <ul>
+            <li v-for="item in routeArr">
+                <router-link :to="item.path" class="ml5 el-icon-menu" tag="a">
+                    {{item.name}}
+                </router-link>
+                <div class="subroute" v-if="secondSub">
+                    <sub-route :subRoute=subRouteObj></sub-route>
+                </div>
+            </li>
+        </ul>
+    </div>   
 </template>
 <script>
 import subRoute from './subsiderbar'
 export default {
     data(){
         return{
-            routeArr:[{
+            secondSub:false,
+            subRouteObj:{
+               subtitle:'',
+               subRouteArr:[]
+            },
+            routeArr:[
+            {
                 path:'/index/dashboard',
                 name:'概况',
-                icon:'el-icon-menu'
-            },{
-                path:'',
+                icon:'el-icon-menu',
+            },
+            {
+                path:'/shop/index',
                 name:'店铺',
                 sub:{
                     subtitle:'店铺管理',
                     subRouteArr:[{
-                        path:'/shop/index',
+                        path:'index',
                         name:'店铺概况'
                     },{
                        path:'',
                        name:'店铺装修' 
+                    }]
+                }
+            },{
+                path:'/goods/index',
+                name:'商品',
+                sub:{
+                    subtitle:'商品管理',
+                    subRouteArr:[{
+                        path:'index',
+                        name:'商品管理'
+                    },{
+                       path:'',
+                       name:'商品分组' 
                     }]
                 }
             }]
@@ -75,11 +63,22 @@ export default {
     components:{
         subRoute
     },
-    mounted() {
-        for(var i = 0 ;i<this.routeArr.length;i++ ){
-            console.log(this.routeArr[i].sub);
+    watch:{
+        '$route' (val, oldVal){
+            if(val.path != '/index/dashboard'){
+                this.secondSub = true;
+                var selectIndex = this.routeArr.filter((item)=>{
+                    return item.path === val.path
+                });
+                this.subRouteObj.subtitle = selectIndex[0].sub.subtitle;
+                this.subRouteObj.subRouteArr = selectIndex[0].sub.subRouteArr;
+                console.log(this.subRouteObj);
+            }else{
+                this.secondSub = false;
+                
+            }
         }
-    },
+    }
 }
 </script>
 <style scope>
@@ -121,9 +120,7 @@ export default {
     bottom: 0;
     left: 90px;
     width: 110px;
-    background: #fff;
-    /* border-right: 1px solid #999;
-     */
+    background: pink;
     -webkit-box-shadow: 0 0 1px 0 rgba(0,0,0,0.2);
     box-shadow: 0 0 1px 0 rgba(0,0,0,0.2);
 }

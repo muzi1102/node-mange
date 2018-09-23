@@ -19,7 +19,7 @@ export default {
     -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;
     box-sizing: border-box;
-    background: #fff;
+    background-color:#fff;
     border-bottom: 1px solid #e5e5e5;
     padding: 0 100px 0 5px;
 }

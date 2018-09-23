@@ -1,7 +1,7 @@
 <template>
 <div>
     <sider-bar></sider-bar>
-    <div class="contain">
+    <div class="contain" :class="{subtab:isSubtab}">
         <router-view></router-view>
     </div>
 </div>    
@@ -12,7 +12,12 @@ import siderBar from './componts/siderbar'
 export default {
     data(){
         return{
-
+            isSubtab:false
+        }
+    },
+    watch:{
+        '$route' (val, oldVal){
+            (val.path != '/index/dashboard') ? (this.isSubtab = true):(this.isSubtab = false)
         }
     },
     components:{
@@ -25,6 +30,9 @@ export default {
 .contain{
     margin-left: 90px;
     background-color: #fff;
+}
+.contain.subtab{
+     margin-left: 200px;
 }
 </style>
 

@@ -26,7 +26,7 @@ export default {
 </script>
 <style scoped>
 .shopcontainer{
-    margin-left: 110px;
+   
 }
 .help-container{
     width:200px;
@@ -34,11 +34,10 @@ export default {
     right: 0px;
     top: 0px;
     bottom: 0px;
+    background-color:aquamarine;
 }
 .shop-content{
     position: relative;
 }
-.help-container{
-    background-color: aquamarine
-}
+
 </style>

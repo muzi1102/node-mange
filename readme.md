@@ -94,6 +94,9 @@ step8：添加路由的信息。总的我们可以把整个页面看成都是路
 step7:解析css的文件
 我直接在vue文件中写css是无法解析的成功的
 
+step8:动态的渲染导航这里有几个问题
+vue中怎么监测路由的变化 守卫函数为什么没有用
+
 3:在component文件夹新建header.vue sidebar.vue
 
 

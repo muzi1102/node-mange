@@ -1,6 +1,5 @@
 <template>
-    <div>
-        <!-- -->
+    <div class="subcontainer">
        <h4 class="sub-title">{{subRoute.subtitle}}</h4>
        <ul>
            <li v-for="(item,index) in subRoute.subRouteArr">
