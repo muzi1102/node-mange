@@ -2,10 +2,8 @@
     <div class="shopcontainer">
         <Header></Header>
         <div class="shop-content">
-            <div class="shop-col">
-            </div>
-            <div class="help-container">
-                22
+            <div class="shop-inner">
+            111
             </div>
         </div>
         
@@ -38,6 +36,12 @@ export default {
 }
 .shop-content{
     position: relative;
+    background-color:#f8f8f8;
+    padding:10px;
 }
-
+.shop-inner{
+    padding:10px;
+    border:1px solid red;
+    background-color:#fff;
+}
 </style>

@@ -3,7 +3,7 @@
        <h4 class="sub-title">{{subRoute.subtitle}}</h4>
        <ul>
            <li v-for="(item,index) in subRoute.subRouteArr">
-               <router-link to=item.path>{{item.name}}</router-link>
+               <router-link :to=item.path>{{item.name}}</router-link>
            </li>
        </ul>
     </div>
@@ -26,7 +26,6 @@ export default {
 
 <style scoped>
 .sub-title{
-    padding-left: 20px;
     font-size: 14px;
     height: 50px;
     line-height: 50px;

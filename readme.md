@@ -96,6 +96,8 @@ step7:解析css的文件
 
 step8:动态的渲染导航这里有几个问题
 vue中怎么监测路由的变化 守卫函数为什么没有用
+动态路由这里还有bug 需要处理
+
 
 3:在component文件夹新建header.vue sidebar.vue
 

@@ -8,7 +8,7 @@ const router = new VueRouter({
     routes:[
         {
             path:'',
-            redirect:'/index'
+            redirect:'/index/dashboard'
         },
         {
             path:'/index',
@@ -21,6 +21,7 @@ const router = new VueRouter({
         },
         {
             path:'/shop',
+            redirect:'/shop/index',
             component:Layout,
             children:[{
                 name:'shopIndex',
@@ -30,6 +31,7 @@ const router = new VueRouter({
         },
         {
             path:'/goods',
+            redirect:'/goods/index',
             component:Layout,
             children:[{
                 name:goodsIndex,

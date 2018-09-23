@@ -5,7 +5,8 @@
         </div>
         <ul>
             <li v-for="item in routeArr">
-                <router-link :to="item.path" class="ml5 el-icon-menu" tag="a">
+                <router-link :to="item.path" class="" tag="a">
+                    <i class="el-icon-menu"></i>
                     {{item.name}}
                 </router-link>
                 <div class="subroute" v-if="secondSub">
@@ -32,7 +33,7 @@ export default {
                 icon:'el-icon-menu',
             },
             {
-                path:'/shop/index',
+                path:'/shop',
                 name:'店铺',
                 sub:{
                     subtitle:'店铺管理',
@@ -45,7 +46,7 @@ export default {
                     }]
                 }
             },{
-                path:'/goods/index',
+                path:'/goods',
                 name:'商品',
                 sub:{
                     subtitle:'商品管理',
@@ -68,7 +69,7 @@ export default {
             if(val.path != '/index/dashboard'){
                 this.secondSub = true;
                 var selectIndex = this.routeArr.filter((item)=>{
-                    return item.path === val.path
+                    return (val.path.indexOf(item.path) > -1)
                 });
                 this.subRouteObj.subtitle = selectIndex[0].sub.subtitle;
                 this.subRouteObj.subRouteArr = selectIndex[0].sub.subRouteArr;
@@ -101,26 +102,26 @@ export default {
     margin-bottom: 14px;
     cursor: pointer;
 }
-.sidebar li.active{
+.sidebar li a.router-link-active{
     background: #F8F8F8;
+    color:#333;
 }
-/* .sidebar li:hover{
+.sidebar li:hover{
     background: #666;
-} */
+} 
 .sidebar li a{
     color: #CACACA;
     text-decoration: none;
+    display:block;
 }
-.sidebar li.active a{
-    color:#333;
-}
+
 .subroute{
     position: fixed;
     top: 0;
     bottom: 0;
     left: 90px;
     width: 110px;
-    background: pink;
+    background: #fff;
     -webkit-box-shadow: 0 0 1px 0 rgba(0,0,0,0.2);
     box-shadow: 0 0 1px 0 rgba(0,0,0,0.2);
 }

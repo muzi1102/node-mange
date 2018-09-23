@@ -4,6 +4,9 @@
     <div class="contain" :class="{subtab:isSubtab}">
         <router-view></router-view>
     </div>
+    <div class="help-service" v-if="isSubtab">
+
+    </div>
 </div>    
 </template>
 
@@ -29,10 +32,19 @@ export default {
 <style scoped>
 .contain{
     margin-left: 90px;
-    background-color: #fff;
+    background-color: #f8f8f8;
 }
 .contain.subtab{
      margin-left: 200px;
+     margin-right:200px;
+}
+.help-service{
+    width:200px;
+    background-color:pink;
+    position:fixed;
+    top:0px;
+    right:0px;
+    bottom:0px;
 }
 </style>
 
