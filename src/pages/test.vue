@@ -1,40 +1,44 @@
 <template>
     <div>
-        <li v-for="item in routeArr" class="el-icon-menu">
-            <router-link :to="item.path" class="ml5" tag="a">
-                {{item.name}}
-            </router-link>
-            <div class="subroute" v-if="item.secondSub">
-            ooo
-            </div>
-        </li>
+        <Tab :tabList='tabList' @change="change">
+            <slot>
+                <ul>
+                    <li v-for="item in template_json">{{item.name}}</li>
+                </ul>
+            </slot>
+        </Tab>
+        </div>
     </div>   
 </template>
 <script>
+import Tab from '@/componets/tab';
 export default {
     data(){
         return{
-            routeArr:[
-            {
-                path:'/index/dashboard',
-                name:'概况',
-                icon:'el-icon-menu',
-                secondSub:''
-            },
-            {
-                path:'/shop',
-                name:'店铺',
-                secondSub:true,
-                sub:{
-                    subtitle:'店铺管理',
-                    subRouteArr:[{
-                        path:'index',
-                        name:'店铺概况'
-                    },{
-                       path:'',
-                       name:'店铺装修' 
-                    }]
-                }
+            tabList:['全部','基础模板','场景导航'],
+            template_json:[{
+                name:"自定义模板1",
+                time:'1234455666'
+            },{
+                name:"自定义模板2",
+                time:'1234455777' 
+            },{
+                name:"自定义模板3",
+                time:'1234455688'
+            }]
+        }
+    },
+    components:{
+        Tab 
+    },
+    computed:{
+       
+    },
+    methods:{
+        change(){
+            this.template_json = [{
+                name:"自定义模板444",
+                time:'1234455688'
             }]
         }
     }
@@ -45,26 +49,5 @@ export default {
     margin: 0px;
     padding: 0px;
 }
-.container{
-    position:relative;
-    border-bottom:1px solid red;
-    margin-bottom:20px
-}
-.left{
-    position:absolute;
-    top:0px;
-    bottom:0px;
-    background:pink;
-}
-.container1{
 
-}
-.left1{
-    position: fixed;
-    top: 0px;
-    bottom: 0px;
-    left: 0px;
-    background-color: red;
-}
 </style>
-

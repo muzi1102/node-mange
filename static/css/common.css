@@ -53,5 +53,12 @@ a{
     float: right;
 }
 /* 浮动结束 */
+/* 清除浮动 */
+.clearfix:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+/* 清除浮动 */
 
 

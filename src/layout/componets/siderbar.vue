@@ -73,7 +73,6 @@ export default {
                 });
                 this.subRouteObj.subtitle = selectIndex[0].sub.subtitle;
                 this.subRouteObj.subRouteArr = selectIndex[0].sub.subRouteArr;
-                console.log(this.subRouteObj);
             }else{
                 this.secondSub = false;
                 
