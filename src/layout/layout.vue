@@ -11,7 +11,7 @@
 </template>
 
 <script>
-import siderBar from './componts/siderbar'
+import siderBar from './componets/siderbar'
 export default {
     data(){
         return{

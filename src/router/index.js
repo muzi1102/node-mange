@@ -2,6 +2,9 @@ import VueRouter from 'vue-router'
 import Layout from '@/layout/layout';
 import dashboard from '@/pages/index/index'
 import shopIndex from '@/pages/shop/index'
+import microIndex from '@/pages/shop/micro/index'
+import microCategory from '@/pages/shop/micro/category'
+import microDraft from '@/pages/shop/micro/draft'
 import goodsIndex from '@/pages/goods/index';
 import test from '@/pages/test'
 const router = new VueRouter({
@@ -27,6 +30,24 @@ const router = new VueRouter({
                 name:'shopIndex',
                 path:'index',
                 component:shopIndex
+            },{
+                name:'micro',
+                path:'/micro',
+                component:Layout,
+                redirect:'/micro/index',
+                children:[{
+                    component:microIndex,
+                    path:'index',
+                    name:'microindex'
+                },{
+                    component:microCategory,
+                    path:'category',
+                    name:'microCategory'
+                },{
+                    component:microDraft,
+                    path:'draft',
+                    name:'microDraft'
+                }]
             }]  
         },
         {

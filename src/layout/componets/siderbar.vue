@@ -41,8 +41,8 @@ export default {
                         path:'index',
                         name:'店铺概况'
                     },{
-                       path:'',
-                       name:'店铺装修' 
+                       path:'micro',
+                       name:'微页面' 
                     }]
                 }
             },{
