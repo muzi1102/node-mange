@@ -10,59 +10,22 @@ import test from '@/pages/test'
 const router = new VueRouter({
     routes:[
         {
-            path:'',
-            redirect:'/index/dashboard'
-        },
-        {
-            path:'/index',
+            path:'/',
             component:Layout,
+            redirect:'dashboard',
             children:[{
-                name:'dashboard',
                 path:'dashboard',
                 component:dashboard
-            }]
-        },
-        {
-            path:'/shop',
-            redirect:'/shop/index',
-            component:Layout,
-            children:[{
-                name:'shopIndex',
-                path:'index',
+            },{
+                path:'/shop/summary',
                 component:shopIndex
             },{
-                name:'micro',
-                path:'/micro',
-                component:Layout,
-                redirect:'/micro/index',
-                children:[{
-                    component:microIndex,
-                    path:'index',
-                    name:'microindex'
-                },{
-                    component:microCategory,
-                    path:'category',
-                    name:'microCategory'
-                },{
-                    component:microDraft,
-                    path:'draft',
-                    name:'microDraft'
-                }]
-            }]  
-        },
-        {
-            path:'/goods',
-            redirect:'/goods/index',
-            component:Layout,
-            children:[{
-                name:goodsIndex,
-                path:'index',
+                path:'/shop/micro/index',
+                component:microIndex
+            },{
+                path:'goods/management',
                 component:goodsIndex
             }]
-        },
-        {
-            path:"/test",
-            component:test
         }
     ]
 })

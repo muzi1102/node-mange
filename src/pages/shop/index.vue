@@ -1,5 +1,5 @@
 <template>
-    <div class="shopcontainer">
+    <div class="shopcontainer inner-content">
         <Header></Header>
         <div class="app">
             <div class="shop-content">
@@ -133,6 +133,9 @@ export default {
     },
     mounted() {
         this.lineChart();
+    },
+    created() {
+        
     },
     methods:{
         lineChart(){

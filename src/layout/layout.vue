@@ -1,11 +1,11 @@
 <template>
 <div>
     <sider-bar></sider-bar>
-    <div class="contain" :class="{subtab:isSubtab}">
+    <div class="contain" :class={subtab:helpService}>
         <router-view></router-view>
     </div>
-    <div class="help-service" v-if="isSubtab">
-
+    <div class="help-service" v-if="helpService">
+        <helpService></helpService>
     </div>
 </div>    
 </template>
@@ -15,13 +15,26 @@ import siderBar from './componets/siderbar'
 export default {
     data(){
         return{
-            isSubtab:false
+            helpService:false
         }
     },
-    watch:{
-        '$route' (val, oldVal){
-            (val.path != '/index/dashboard') ? (this.isSubtab = true):(this.isSubtab = false)
+    created() {
+        if(this.$route.path.split('/').length>2){
+            this.helpService = true;
         }
+    },
+    beforeRouteEnter (to, from, next) {
+        console.log('beforeRouteEnter');
+        console.log(to);
+        console.log(from)
+        next();
+    },
+    watch:{
+      '$route'(){
+            if(this.$route.path.split('/').length>2){
+                this.helpService = true;
+            }
+      }  
     },
     components:{
         siderBar
@@ -36,11 +49,11 @@ export default {
 }
 .contain.subtab{
      margin-left: 200px;
-     margin-right:200px;
+     /* margin-right:200px; */
 }
 .help-service{
     width:200px;
-    background-color:pink;
+    border: 1px solid #e5e5e5;
     position:fixed;
     top:0px;
     right:0px;

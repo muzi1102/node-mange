@@ -9,10 +9,10 @@
                     <i class="el-icon-menu"></i>
                     {{item.name}}
                 </router-link>
-                <div class="subroute" v-if="secondSub">
-                    <sub-route :subRoute=subRouteObj></sub-route>
-                </div>
             </li>
+            <div class="subroute" v-if="secondSub">
+                <sub-route :subRoute=subRouteObj></sub-route>
+            </div>
         </ul>
     </div>   
 </template>
@@ -28,20 +28,20 @@ export default {
             },
             routeArr:[
             {
-                path:'/index/dashboard',
+                path:'/dashboard',
                 name:'概况',
                 icon:'el-icon-menu',
             },
             {
-                path:'/shop',
+                path:'/shop/summary',
                 name:'店铺',
                 sub:{
                     subtitle:'店铺管理',
                     subRouteArr:[{
-                        path:'index',
+                        path:'shop/index',
                         name:'店铺概况'
                     },{
-                       path:'micro',
+                       path:'shop/micro',
                        name:'微页面' 
                     }]
                 }
@@ -64,19 +64,29 @@ export default {
     components:{
         subRoute
     },
+    computed:{
+        'subRouteObj':function(){
+            
+        }
+    },
+    created() {
+        if(this.$route.path.split('/').length>2){
+           this.secondSub=true;
+        }
+    },
     watch:{
         '$route' (val, oldVal){
-            if(val.path != '/index/dashboard'){
-                this.secondSub = true;
-                var selectIndex = this.routeArr.filter((item)=>{
-                    return (val.path.indexOf(item.path) > -1)
-                });
-                this.subRouteObj.subtitle = selectIndex[0].sub.subtitle;
-                this.subRouteObj.subRouteArr = selectIndex[0].sub.subRouteArr;
-            }else{
-                this.secondSub = false;
+            // if(val.path != '/index/dashboard'){
+            //     this.secondSub = true;
+            //     var selectIndex = this.routeArr.filter((item)=>{
+            //         return (val.path.indexOf(item.path) > -1)
+            //     });
+            //     this.subRouteObj.subtitle = selectIndex[0].sub.subtitle;
+            //     this.subRouteObj.subRouteArr = selectIndex[0].sub.subRouteArr;
+            // }else{
+            //     this.secondSub = false;
                 
-            }
+            // }
         }
     }
 }
