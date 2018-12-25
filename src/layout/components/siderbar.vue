@@ -4,7 +4,7 @@
             我其实是logo
         </div>
         <ul>
-            <li v-for="item in routeArr">
+            <li v-for="(item,index) in routeArr" @click="bindEvent(index)" :key="index">
                 <router-link :to="item.path" class="" tag="a">
                     <i class="el-icon-menu"></i>
                     {{item.name}}
@@ -21,7 +21,8 @@ import subRoute from './subsiderbar'
 export default {
     data(){
         return{
-            secondSub:false,
+            // secondSub:false,
+            selectIndex:0,
             subRouteObj:{
                subtitle:'',
                subRouteArr:[]
@@ -65,29 +66,30 @@ export default {
         subRoute
     },
     computed:{
-        'subRouteObj':function(){
+        'subRoute':function(){
             
+        },
+        'secondSub':function(){
+            console.log(this.subRouteObj.subRouteArr)
+            console.log( Object.keys(this.subRouteObj.subRouteArr))
+            return Object.keys(this.subRouteObj.subRouteArr) || false;
         }
     },
     created() {
-        if(this.$route.path.split('/').length>2){
-           this.secondSub=true;
+        // if(this.$route.path.split('/').length>2){
+        //    this.secondSub=true;
+        // }
+    },
+    methods: {
+        bindEvent(index){
+            this.subRouteObj = {};
+            this.selectIndex = index;
+            Object.assign(this.subRouteObj,this.routeArr[index].sub)
+            console.log(this.subRouteObj);
         }
     },
     watch:{
-        '$route' (val, oldVal){
-            // if(val.path != '/index/dashboard'){
-            //     this.secondSub = true;
-            //     var selectIndex = this.routeArr.filter((item)=>{
-            //         return (val.path.indexOf(item.path) > -1)
-            //     });
-            //     this.subRouteObj.subtitle = selectIndex[0].sub.subtitle;
-            //     this.subRouteObj.subRouteArr = selectIndex[0].sub.subRouteArr;
-            // }else{
-            //     this.secondSub = false;
-                
-            // }
-        }
+
     }
 }
 </script>

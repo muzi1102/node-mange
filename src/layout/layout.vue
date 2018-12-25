@@ -24,17 +24,9 @@ export default {
         }
     },
     beforeRouteEnter (to, from, next) {
-        console.log('beforeRouteEnter');
-        console.log(to);
-        console.log(from)
-        next();
+
     },
     watch:{
-      '$route'(){
-            if(this.$route.path.split('/').length>2){
-                this.helpService = true;
-            }
-      }  
     },
     components:{
         siderBar
