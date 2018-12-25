@@ -340,7 +340,7 @@
 </template>
 <script>
     import axios from 'axios';
-    import prompt from '@/componets/prompt'
+    import prompt from '@/components/prompt'
     export default {
         data(){
             return {

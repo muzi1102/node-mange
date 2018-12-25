@@ -111,8 +111,8 @@
     </div>
 </template>
 <script>
-import Header from '@/layout/componets/header';
-import tab from '@/componets/tab';
+import Header from '@/layout/components/header';
+import tab from '@/components/tab';
 import echarts from 'echarts';
 export default {
     data(){

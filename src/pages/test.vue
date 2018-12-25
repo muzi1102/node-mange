@@ -11,7 +11,7 @@
     </div>   
 </template>
 <script>
-import Tab from '@/componets/tab';
+import Tab from '@/components/tab';
 export default {
     data(){
         return{
